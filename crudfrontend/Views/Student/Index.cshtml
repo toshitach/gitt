@@ -1,0 +1,26 @@
+﻿@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{
+    List<Student> studs = ViewData["students"] as List<Student>;
+}
+
+
+@model BOL.Student
+<h2> student Details</h2>
+<ol>
+    @{
+        foreach (Student s in studs)
+        {
+            <p>RollNO :@s.RollNo </p>
+            <p>Name : @s.Name</p>
+            <p>Age : @s.Age</p>
+
+        }
+    }
+
+</ol>
